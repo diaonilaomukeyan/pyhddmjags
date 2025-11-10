@@ -55,6 +55,18 @@ conda activate jags
 pip install pyjags
 ```
 
+### Python 脚本概览
+
+* `pyhddmjagsutils.py`：汇总模拟、诊断与可视化的工具函数，是各示例脚本的公共基础。
+* `simple_test.py`：最简易的非层级漂移扩散模型示例，用 pyjags 模拟并拟合反应时数据。
+* `recovery_test.py`：针对混合条件的层级 HDDM 工作流，包含后验检查与参数回收图形。
+* `nolapse_test.py`：不含 lapse 过程的层级 HDDM，展示如何在 JAGS 中建模多条件结构。
+* `blocked_exp_conds.py`：为分块实验条件定制，拟合带固定起始偏置的层级 HDDM。
+* `regression_test.py`：在层级 HDDM 中加入被试层面的回归项，用于刻画协变量效应。
+* `model2b_experiment2.py`：复现教程中的 Model 2b / Experiment 2，使用 pyjags 完整演示模拟与拟合流程。
+* `simpleCPP_test.py`：将漂移率与 CPP 斜率关联的神经增强型非层级 HDDM 实例。
+* `simpleCPP_sim.py`：生成神经增强型 HDDM 的合成 CPP 斜率与行为数据，不执行推断。
+* `nolapse_test_pystan.py`：无 lapse 层级 HDDM 的 Stan/PyStan 版本，方便在非 JAGS 环境中使用。
 ### License
 
 pyhddmjags is licensed under the GNU General Public License v3.0 and written by Michael D. Nunez from the Psychological Methods group at the University of Amsterdam.
